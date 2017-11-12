@@ -30,7 +30,36 @@ public class JAVA_PRG_05_05_Falling_Distance {
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        int intTime;
+        
+        final int INT_TIME = 10;
+        
+        double dblDistance;
+        
+        for (int i = 0 ; i < INT_TIME ; i++)
+        {
+            intTime = (i + 1);
+            
+            dblDistance = calculateDistance(intTime);
+            
+            displayResult(intTime, dblDistance);
+        }
     }
     
+    public static double calculateDistance(int intTime)
+    {
+        double dblDistance;
+        
+        final double DBL_GRAVITY = 9.8;
+        
+        dblDistance = 0.5 * DBL_GRAVITY * (intTime * intTime);
+        
+        return dblDistance;
+    }
+    
+    public static void displayResult(int intTime, double dblDistance)
+    {
+        System.out.println("At " + intTime + " seconds, the object has " +
+                "traveled " + dblDistance + " units.");
+    }
 }
